@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		function time()
+				{
+				today=new Date();
+				h=today.getHours();
+				m=today.getMinutes();
+				s=today.getSeconds();
+				if (h > 12) {
+					h=h-12;
+				};
+				
+				h=h*2-1;
+				if (m > 30){
+					h=h+1;					
+				}
+
+				if (m > 30) {
+					m=m-30;
+				};
+
+				m=m*2-1;
+				if (s > 30){
+					m=m+1;					
+				}
+
+				document.getElementById('txt').innerHTML="Agora são "+h+":"+m;
+				setTimeout('time()',500);
+				}
+		</script>
+
+		
+	</head>
+	<body onload="time()">
+		<div id="txt">
+		</div>
+	</body>
+</html>
